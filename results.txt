@@ -1,0 +1,11 @@
+Validation:
+[Epoch: 39, numImages:  1000]
+Acc:0.9610357161458334, Acc_class:0.8815711541745611, mIoU:0.8360066819710516, fwIoU: 0.9285887919558049
+
+CUDA_VISIBLE_DEVICES=3 nohup python traintorch.py
+CUDA_VISIBLE_DEVICES=3 python predict.py --resume run/bdd/deeplab-resnet/experiment_10/checkpoint.pth.tar --input /data/BDD100K/bdd100k/bdd_data/images/100k/test --output /data/BDD100K/bdd100k/pytorch-deeplab-xception/deeplabs/pred --gpu-id 3 --batch-size 16
+
+    train_image_dir = '/data/BDD100K/bdd100k/bdd_data/images/100k/train'
+    train_mask_dir = '/data/BDD100K/bdd100k/bdd_data/drivable_maps/labels/train'
+    val_image_dir = '/data/BDD100K/bdd100k/bdd_data/images/100k/val'
+    val_mask_dir = '/data/BDD100K/bdd100k/bdd_data/drivable_maps/labels/val'
